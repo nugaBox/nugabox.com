@@ -2,7 +2,7 @@ remote_theme : TaylanTatli/Moon
 
 # Site
 title:              nugaBox
-bio:                'just a box'
+bio:                'Just a Box'
 description:        "This is just a box. The sheep you want is inside"
 reading_time:       true
 words_per_minute:   200
