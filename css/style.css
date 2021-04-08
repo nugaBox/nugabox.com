@@ -1,0 +1,65 @@
+/*
+ * 2021.01.01 새해맞이 초안 작성
+ * 가민정보시스템 장누가
+ */
+
+/** 기본 세팅 **/
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/earlyaccess/notosanskr.css);
+@import url(https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap);
+html,body { height:100%; width:100%; }
+body { font-family:'Noto Sans KR',sans-serif; background-color:#fdfdfd; font-size:15px; color:#676a6c; overflow-x:hidden }
+h1 { margin:0; padding:0 }
+p { font-size:35px; color:#000000; font-weight:700; margin:0; padding:0; margin-bottom: 20px; }
+
+/** 프로필 이미지 **/
+.middle-box { max-width:400px; z-index:100; margin:0 auto; padding-top:50px; text-align:center }
+.profile { position: relative; background-image: url(/images/jhogu_crop.png); background-size: cover; width: 200px; height: 200px; border-radius: 25px; margin: auto; margin-top: 30px; margin-bottom: 30px; box-shadow: 0 3.4px 2.7px rgba(0, 0, 0, 0.037), 0 8.7px 6.9px rgba(0, 0, 0, 0.053), 0 17.7px 14.2px rgba(0, 0, 0, 0.067), 0 16.5px 9.2px rgba(0, 0, 0, 0.083), 0 40px 20px rgba(0, 0, 0, 0.12); }
+.profile .profile-cover {  position: absolute; height: 100%; width: 100%; z-index:9; }
+.profile .content{ position: absolute; top:75%; left:10%; width:230px; display:flex; }
+.profile .content span { font-size:24px; font-weight: 600; color: white; z-index: 3; text-align: center; text-shadow: 0px 0px 6px grey; }
+  
+/** 앱 목록 **/
+.app-line { display: none; margin-top: 15px; }
+.app-line .app-icons { display: inline-flex; margin-top: 10px; }
+.app-line .app-icons .icon { display: block; height: 65px; width: 65px; margin: 0 10px; -webkit-background-composite: #fff; background-color: #fff; background-size: cover; border-radius: 15px; padding-top: 65px; z-index: 2; text-decoration:none; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.037), 0 1px 2px rgba(0, 0, 0, 0.053), 0 17.7px 14.2px rgba(0, 0, 0, 0.067), 0 10px 10px rgba(0, 0, 0, 0.083), 0 100px 80px rgba(0, 0, 0, 0.12); }
+.app-line .app-icons .icon span{ display:block; font-size:14px; font-weight: 400; color:#000000; margin-top:5px;}
+.app-line .app-icons .icon-none { background: none; box-shadow: none; }
+.app-line .app-icons #cloud { background-image: url(/images/icon_cloud_circle.png); }
+.app-line .app-icons #wiki{ background-image: url(/images/icon_wiki.png); }
+.app-line .app-icons #nugabox { background-image: url(/images/icon_nugabox.png); }
+.app-line .app-icons #portfolio { background-image: url(/images/icon_portfolio.png); }
+.app-line .app-icons #github { background-image: url(/images/icon_github.png); }
+.app-line .app-icons #velog { background-image: url(/images/icon_velog.png); background-color: #26C898; }
+.app-line .app-icons #blog { background-image: url(/images/codenuga_crop.png); }
+.app-line .app-icons #devlabs { background-image: url(/images/icon_terminal.png); background-color: #404040; }
+.app-line .app-icons #nuflix { background-image: url(/images/icon_nuflix.png); background-color: #222222; }
+.app-line .app-icons #cyworld { background-image: url(/images/icon_cyworld.png); }
+
+/** 인사말 텍스트 **/
+.welcome { margin:40px 0 10px 0; } 
+.welcome p{ font-size:18px; color:#bbbbbb; cursor:default;} 
+.welcome .font-eng { font-family: 'Playfair Display', serif; }
+.welcome .insta-gradient { background:linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d); -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+.welcome .arrow-icon { flex:right; background-color: transparent; width: 2.8em; display: block; padding: 0.5em; margin: 1em auto; position: relative; cursor: pointer; border-radius: 4px; }
+.welcome .arrow-icon .left-bar { position: absolute; background-color: transparent; top: 0; left: 0; width: 20px; height: 5px; display: block; transform: rotate(35deg); float: right; border-radius: 2px; }
+.welcome .arrow-icon .right-bar { position: absolute; background-color: transparent; top: 0px; left: 12px; width: 20px; height: 5px; display: block; transform: rotate(-35deg); float: right; border-radius: 2px; }
+.welcome .arrow-icon .left-bar:after { content: ""; background-color: white; width: 20px; height: 5px; display: block; float: right; border-radius: 6px 10px 10px 6px; transition: all 0.5s cubic-bezier(0.25, 1.7, 0.35, 0.8); z-index: -1; box-shadow: 0px 0px 5px #aaaaaa; }
+.welcome .arrow-icon .right-bar:after { content: ""; background-color: white; width: 20px; height: 5px; display: block; float: right; border-radius: 10px 6px 6px 10px; transition: all 0.5s cubic-bezier(0.25, 1.7, 0.35, 0.8); z-index: -1; box-shadow: 0px 0px 5px #aaaaaa; }
+
+/** SNS 링크 **/
+.sns-link { display: inline-flex; margin:auto;}
+.sns-link a { display: block; height: 35px; width: 35px; margin: 0 5px; z-index: 1;}
+.sns-link #email { background-size: cover; background-image: url(/images/icon_email.png); }
+.sns-link #email:hover { background-size: cover; background-image: url(/images/icon_email_color.png); }
+.sns-link #youtube { background-size: cover; background-image: url(/images/icon_youtube.png); }
+.sns-link #youtube:hover { background-size: cover; background-image: url(/images/icon_youtube_color.png); }
+.sns-link #instagram { background-size: cover; background-image: url(/images/icon_instagram.png); }
+.sns-link #instagram:hover { background-size: cover; background-image: url(/images/icon_instagram_color.png); }
+
+/** 효과 **/
+.shadowbox { box-shadow: 0 3.4px 2.7px rgba(0, 0, 0, 0.037), 0 8.7px 6.9px rgba(0, 0, 0, 0.053), 0 17.7px 14.2px rgba(0, 0, 0, 0.067), 0 36.5px 29.2px rgba(0, 0, 0, 0.083), 0 100px 80px rgba(0, 0, 0, 0.12); }
+.hover-ani { transform: scale(1); -webkit-transform: scale(1); -moz-transform: scale(1); -ms-transform: scale(1); -o-transform: scale(1); transition: all 0.3s ease-in-out; }
+.hover-ani:hover{ cursor: pointer; transform: scale(1.1); -webkit-transform: scale(1.1); -moz-transform: scale(1.1); -ms-transform: scale(1.1); -o-transform: scale(1.1); transition: all 0.3s ease-in-out; }
+.open .left-bar:after { transform-origin: center center; transform: rotate(-70deg); }
+.open .right-bar:after { transform-origin: center center; transform: rotate(70deg); }
