@@ -14,7 +14,7 @@ p { font-size:35px; color:#000000; font-weight:700; margin:0; padding:0; margin-
 
 /** 프로필 이미지 **/
 .middle-box { max-width:400px; z-index:100; margin:0 auto; padding-top:50px; text-align:center }
-.profile { position: relative; background-image: url(/images/jhogu_crop.png); background-size: cover; width: 200px; height: 200px; border-radius: 25px; margin: auto; margin-top: 30px; margin-bottom: 30px; box-shadow: 0 3.4px 2.7px rgba(0, 0, 0, 0.037), 0 8.7px 6.9px rgba(0, 0, 0, 0.053), 0 17.7px 14.2px rgba(0, 0, 0, 0.067), 0 16.5px 9.2px rgba(0, 0, 0, 0.083), 0 40px 20px rgba(0, 0, 0, 0.12); }
+.profile { position: relative; background-image: url(https://cdn.jsdelivr.net/gh/nugaBox/nugabox.github.io/images/jhogu_crop.png); background-size: cover; width: 200px; height: 200px; border-radius: 25px; margin: auto; margin-top: 30px; margin-bottom: 30px; box-shadow: 0 3.4px 2.7px rgba(0, 0, 0, 0.037), 0 8.7px 6.9px rgba(0, 0, 0, 0.053), 0 17.7px 14.2px rgba(0, 0, 0, 0.067), 0 16.5px 9.2px rgba(0, 0, 0, 0.083), 0 40px 20px rgba(0, 0, 0, 0.12); }
 .profile .profile-cover {  position: absolute; height: 100%; width: 100%; z-index:9; }
 .profile .content{ position: absolute; top:75%; left:10%; width:230px; display:flex; }
 .profile .content span { font-size:24px; font-weight: 600; color: white; z-index: 3; text-align: center; text-shadow: 0px 0px 6px grey; }
@@ -25,16 +25,16 @@ p { font-size:35px; color:#000000; font-weight:700; margin:0; padding:0; margin-
 .app-line .app-icons .icon { display: block; height: 65px; width: 65px; margin: 0 10px; -webkit-background-composite: #fff; background-color: #fff; background-size: cover; border-radius: 15px; padding-top: 65px; z-index: 2; text-decoration:none; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.037), 0 1px 2px rgba(0, 0, 0, 0.053), 0 17.7px 14.2px rgba(0, 0, 0, 0.067), 0 10px 10px rgba(0, 0, 0, 0.083), 0 100px 80px rgba(0, 0, 0, 0.12); }
 .app-line .app-icons .icon span{ display:block; font-size:14px; font-weight: 400; color:#000000; margin-top:5px;}
 .app-line .app-icons .icon-none { background: none; box-shadow: none; }
-.app-line .app-icons #cloud { background-image: url(/images/icon_cloud_circle.png); }
-.app-line .app-icons #wiki{ background-image: url(/images/icon_wiki.png); }
-.app-line .app-icons #nugabox { background-image: url(/images/icon_nugabox.png); }
-.app-line .app-icons #portfolio { background-image: url(/images/icon_portfolio.png); }
-.app-line .app-icons #github { background-image: url(/images/icon_github.png); }
-.app-line .app-icons #velog { background-image: url(/images/icon_velog.png); background-color: #26C898; }
-.app-line .app-icons #blog { background-image: url(/images/codenuga_crop.png); }
-.app-line .app-icons #devlabs { background-image: url(/images/icon_terminal.png); background-color: #404040; }
-.app-line .app-icons #nuflix { background-image: url(/images/icon_nuflix.png); background-color: #222222; }
-.app-line .app-icons #cyworld { background-image: url(/images/icon_cyworld.png); }
+.app-line .app-icons #cloud { background-image: url(https://cdn.jsdelivr.net/gh/nugaBox/nugabox.github.io/images/icon_cloud_circle.png); }
+.app-line .app-icons #wiki{ background-image: url(https://cdn.jsdelivr.net/gh/nugaBox/nugabox.github.io/images/icon_wiki.png); }
+.app-line .app-icons #nugabox { background-image: url(https://cdn.jsdelivr.net/gh/nugaBox/nugabox.github.io/images/icon_nugabox.png); }
+.app-line .app-icons #portfolio { background-image: url(https://cdn.jsdelivr.net/gh/nugaBox/nugabox.github.io/images/icon_portfolio.png); }
+.app-line .app-icons #github { background-image: url(https://cdn.jsdelivr.net/gh/nugaBox/nugabox.github.io/images/icon_github.png); }
+.app-line .app-icons #velog { background-image: url(https://cdn.jsdelivr.net/gh/nugaBox/nugabox.github.io/images/icon_velog.png); background-color: #26C898; }
+.app-line .app-icons #blog { background-image: url(https://cdn.jsdelivr.net/gh/nugaBox/nugabox.github.io/images/codenuga_crop.png); }
+.app-line .app-icons #devlabs { background-image: url(https://cdn.jsdelivr.net/gh/nugaBox/nugabox.github.io/images/icon_terminal.png); background-color: #404040; }
+.app-line .app-icons #nuflix { background-image: url(https://cdn.jsdelivr.net/gh/nugaBox/nugabox.github.io/images/icon_nuflix.png); background-color: #222222; }
+.app-line .app-icons #cyworld { background-image: url(https://cdn.jsdelivr.net/gh/nugaBox/nugabox.github.io/images/icon_cyworld.png); }
 
 /** 인사말 텍스트 **/
 .welcome { margin:40px 0 10px 0; } 
@@ -50,12 +50,12 @@ p { font-size:35px; color:#000000; font-weight:700; margin:0; padding:0; margin-
 /** SNS 링크 **/
 .sns-link { display: inline-flex; margin:auto;}
 .sns-link a { display: block; height: 35px; width: 35px; margin: 0 5px; z-index: 1;}
-.sns-link #email { background-size: cover; background-image: url(/images/icon_email.png); }
-.sns-link #email:hover { background-size: cover; background-image: url(/images/icon_email_color.png); }
-.sns-link #youtube { background-size: cover; background-image: url(/images/icon_youtube.png); }
-.sns-link #youtube:hover { background-size: cover; background-image: url(/images/icon_youtube_color.png); }
-.sns-link #instagram { background-size: cover; background-image: url(/images/icon_instagram.png); }
-.sns-link #instagram:hover { background-size: cover; background-image: url(/images/icon_instagram_color.png); }
+.sns-link #email { background-size: cover; background-image: url(https://cdn.jsdelivr.net/gh/nugaBox/nugabox.github.io/images/icon_email.png); }
+.sns-link #email:hover { background-size: cover; background-image: url(https://cdn.jsdelivr.net/gh/nugaBox/nugabox.github.io/images/icon_email_color.png); }
+.sns-link #youtube { background-size: cover; background-image: url(https://cdn.jsdelivr.net/gh/nugaBox/nugabox.github.io/images/icon_youtube.png); }
+.sns-link #youtube:hover { background-size: cover; background-image: url(https://cdn.jsdelivr.net/gh/nugaBox/nugabox.github.io/images/icon_youtube_color.png); }
+.sns-link #instagram { background-size: cover; background-image: url(https://cdn.jsdelivr.net/gh/nugaBox/nugabox.github.io/images/icon_instagram.png); }
+.sns-link #instagram:hover { background-size: cover; background-image: url(https://cdn.jsdelivr.net/gh/nugaBox/nugabox.github.io/images/icon_instagram_color.png); }
 
 /** 효과 **/
 .shadowbox { box-shadow: 0 3.4px 2.7px rgba(0, 0, 0, 0.037), 0 8.7px 6.9px rgba(0, 0, 0, 0.053), 0 17.7px 14.2px rgba(0, 0, 0, 0.067), 0 36.5px 29.2px rgba(0, 0, 0, 0.083), 0 100px 80px rgba(0, 0, 0, 0.12); }
