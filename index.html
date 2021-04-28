@@ -11,6 +11,7 @@
   <title>NUGABOX</title>
   <link rel="icon" href="images/favicon.ico">
   <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" crossorigin="anonymous">
+  <link href="css/fontAwesome.min.css" rel="stylesheet" type="text/css" crossorigin="anonymous">
   <link href="css/style.css" rel="stylesheet" type="text/css" crossorigin="anonymous">
   <link href="css/jquery-sakura.css" rel="stylesheet" type="text/css" crossorigin="anonymous">
 </head>
@@ -31,18 +32,17 @@
         <a class="icon hover-ani" id="portfolio" href="https://portfolio.nugabox.io" target="_blank"><span>포트폴리오</span></a>
       </div>
       <div class="app-icons">        
-        <a class="icon hover-ani" id="siiru" href="https://siiru.comin.com" target="_blank"><span>SiiRU</span></a>
-        <a class="icon hover-ani" id="design" href="https://design.nugabox.com" target="_blank"><span>웹디자인</span></a>
+        <a class="icon hover-ani" id="soundcloud" href="https://soundcloud.com/code-nuga" target="_blank"><span>SoundCloud</span></a>
         <a class="icon hover-ani" id="cyworld" href="https://dev.nugabox.com/pj/cyworld" target="_blank"><span>미니홈피</span></a>
+        <a class="icon hover-ani" id="bowling" href="https://dev.nugabox.com/pj/bowling" target="_blank"><span>볼링장</span></a>
         <a class="icon hover-ani" id="blog" href="https://blog.nugabox.com" target="_blank"><span>블로그</span></a>
-        
         <!--<a class="icon icon-none"></a>-->
       </div>
       <div class="app-icons">
-        <a class="icon hover-ani" id="comin" href="https://mbow.comin.com" target="_blank"><span>COMIN</span></a> 
-        <a class="icon hover-ani" id="soundcloud" href="https://soundcloud.com/code-nuga" target="_blank"><span>SoundCloud</span></a>
+        <a class="icon hover-ani" id="webdesign" href="https://design.nugabox.com" target="_blank"><span>WebDesign</span></a>
         <a class="icon hover-ani" id="devlabs" href="https://dev.nugabox.com" target="_blank"><span>DevLabs</span></a>
         <a class="icon hover-ani" id="nuflix" href="https://movie.nugabox.com" target="_blank"><span>누플릭스</span></a>
+        <a class="icon icon-none"></a>
       </div>
     </div>
     <div class="welcome">
@@ -53,10 +53,10 @@
       <p class="font-eng" id="welcome-text">"This is only his box.<br>The sheep you asked for is inside."</p>
       <p>Hello World!<a class="insta-gradient" href="https://www.instagram.com/codenuga__" target="_blank"> by @codenuga__</a></p>
     </div>
-    <div class="sns-link">            
-      <a id="email" href="mailto:ngjang@nugabox.com" data-bs-toggle="tooltip" data-bs-placement="top" title="Email"></a>
-      <a id="youtube" href="https://www.youtube.com/channel/UClyiG3nsS6r1Z36jUDUADDw" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" title="Youtube"></a>
-      <a id="instagram" href="https://www.instagram.com/codenuga__" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" title="Instagram"></a>
+    <div class="sns-link">
+      <a id="email" href="mailto:ngjang@nugabox.com" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Email"><i class="fas fa-envelope"></i></a>
+      <a id="youtube" href="https://www.youtube.com/channel/UClyiG3nsS6r1Z36jUDUADDw" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" title="Youtube"><i class="fab fa-youtube"></i></a>
+      <a id="instagram" href="https://www.instagram.com/codenuga__" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" title="Instagram"><i class="fab fa-instagram"></i></a>
     </div>
   </div>
   <!-- JavaScript -->
@@ -89,7 +89,7 @@
         if($('#welcome-text').hasClass('font-eng')){
           $('#welcome-text').removeClass('font-eng');
           $('#welcome-text').addClass('font-han');
-          $('#welcome-text').css('opacity','0').stop().html('"이건 그의 상자야.<br>네가 원하는 양은 그 안에 있어."').animate({opacity:1},1000);
+          $('#welcome-text').css('opacity','0').stop().html('"네가 원하는 양은 이 상자 안에 있어."').animate({opacity:1},1000);
         } else {
           $('#welcome-text').removeClass('font-han');
           $('#welcome-text').addClass('font-eng');
