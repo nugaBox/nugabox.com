@@ -16,6 +16,7 @@
   <link href="css/jquery-sakura.css" rel="stylesheet" type="text/css" crossorigin="anonymous">
 </head>
 <body>
+  <a class="sakura-toggle hover-ani" value="on">🌸</a>
   <div class="middle-box">
     <p><img class="banner" src="images/banner_dark.png" border="0" width="180" alt="nugaBox"></p>
     <div class="profile hover-ani">
@@ -57,6 +58,7 @@
       <a id="email" href="mailto:ngjang@nugabox.com" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Email"><i class="fas fa-envelope"></i></a>
       <a id="youtube" href="https://www.youtube.com/channel/UClyiG3nsS6r1Z36jUDUADDw" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" title="Youtube"><i class="fab fa-youtube"></i></a>
       <a id="instagram" href="https://www.instagram.com/codenuga__" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a id="memory" href="https://campaign.naver.com/memory/" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" title="Memory"></a>
     </div>
   </div>
   <!-- JavaScript -->
@@ -69,7 +71,17 @@
     document.onselectstart=function(){return false;} // 드래그 방지
     document.ondragstart=function(){return false;} // 선택 방지
     $(document).ready(function(){
-      $('body').sakura();
+      // 벚꽃비
+      $('body').sakura('start');
+      $('.sakura-toggle').click(function(){
+        if ($(this).val() == 'on'){
+          $('body').sakura('stop');
+          $(this).val('off');
+        } else {
+          $('body').sakura('start');
+          $(this).val('on');
+        }
+      });
       // 부트스트랩 툴팁
       var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
       var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
@@ -87,13 +99,15 @@
       // 문구 한영 전환
       changeKorEng = setInterval(function() {
         if($('#welcome-text').hasClass('font-eng')){
+          $('#welcome-text').animate({opacity:0},3000);
           $('#welcome-text').removeClass('font-eng');
           $('#welcome-text').addClass('font-han');
-          $('#welcome-text').css('opacity','0').stop().html('"네가 원하는 양은 이 상자 안에 있어."').animate({opacity:1},1000);
+          $('#welcome-text').css('opacity','0').stop().html('"네가 원하는 양은 이 상자 안에 있어."').animate({opacity:1},2000);
         } else {
+          $('#welcome-text').animate({opacity:0},3000);
           $('#welcome-text').removeClass('font-han');
           $('#welcome-text').addClass('font-eng');
-          $('#welcome-text').css('opacity','0').stop().html('"This is only his box.<br>The sheep you asked for is inside."').animate({opacity:1},1000);
+          $('#welcome-text').css('opacity','0').stop().html('"This is only his box.<br>The sheep you asked for is inside."').animate({opacity:1},2000);
         }
       }, 7000);
     });    
