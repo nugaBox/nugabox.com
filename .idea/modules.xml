@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/nugabox.iml" filepath="$PROJECT_DIR$/nugabox.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/nugabox.iml" filepath="$PROJECT_DIR$/.idea/nugabox.iml" />
     </modules>
   </component>
 </project>
