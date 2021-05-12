@@ -481,18 +481,12 @@ $RECYCLE.BIN/
 Icon\r*
 *.DS_Store
 *.ds_store
-._*
-Thumbs.db
 photothumb.db
 System Volume Information
 .*.sw?
 .*.*sw?
-.TemporaryItems
-.Trashes
-.DocumentRevisions-V100
 .Trash-*
 .fsevented
-.apdisk
 .directory
 *.part
 *.filepart
