@@ -46,10 +46,11 @@ footer p {text-align:center; padding-bottom:20px; margin-bottom:0; color:#ddd; f
 .app-line .app-icons #github { background-image: url(/images/icon_github.png); }
 .app-line .app-icons #velog { background-image: url(/images/icon_velog.png); background-color: #26C898; }
 .app-line .app-icons #blog { background-image: url(/images/codenuga_crop.png); }
-.app-line .app-icons #devlabs { background-image: url(/images/icon_terminal.png); background-color: #404040; }
+.app-line .app-icons #terminal { background-image: url(/images/icon_terminal.png); background-color: #404040; }
+.app-line .app-icons #devlabs { background-image: url(/images/icon_dev2.png);  }
 .app-line .app-icons #nuflix { background-image: url(/images/icon_nuflix.png); background-color: #222222; }
 .app-line .app-icons #cyworld { background-image: url(/images/icon_cyworld.png); }
-.app-line .app-icons #webdesign { background-image: url(/images/icon_html.png); }
+.app-line .app-icons #design { background-image: url(/images/icon_design.png); background-color: #001e36; }
 .app-line .app-icons #soundcloud { background-image: url(/images/icon_soundcloud-grad.png); }
 .app-line .app-icons #comin { background-image: url(/images/icon_comin_logo_white.png); background-color: #B7363C; }
 .app-line .app-icons #siiru { background-image: url(/images/icon_comin_logo_red.png); }
