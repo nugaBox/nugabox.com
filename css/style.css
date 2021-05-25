@@ -14,7 +14,7 @@
     font-style: normal;
 }
 html,body { height:100%; width:100%; }
-body { font-family:'Noto Sans KR',sans-serif; background-color:#fdfdfd; font-size:15px; color:#676a6c; overflow-x:hidden }
+body { font-family:'Noto Sans KR',sans-serif; background-color:#fdfdfd; font-size:15px; color:#676a6c; overflow-x:hidden; overflow-y:hidden  }
 h1 { margin:0; padding:0 }
 p { font-size:35px; color:#000000; font-weight:700; margin:0; padding:0; margin-bottom: 20px; }
 a.sakura-toggle { position: absolute; background: none; border: none; font-size: 20px; margin: 10px;}
