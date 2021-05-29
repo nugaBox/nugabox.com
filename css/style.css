@@ -55,7 +55,8 @@ footer p {text-align:center; padding-bottom:20px; margin-bottom:0; color:#ddd; f
 .app-line .app-icons #soundcloud { background-image: url(/images/icon_soundcloud-grad.png); }
 .app-line .app-icons #comin { background-image: url(/images/icon_comin_logo_white.png); background-color: #B7363C; }
 .app-line .app-icons #siiru { background-image: url(/images/icon_comin_logo_red.png); }
-.app-line .app-icons #bowling { background-image: url(/images/icon_bowling.png); }
+/*.app-line .app-icons #bowling { background-image: url(/images/icon_bowling.png); }*/
+.app-line .app-icons #bowling { background-image: url(/images/icon_bowling2.png); }
 .app-line .app-icons #soundcloud span{ font-size:13px; letter-spacing: -0.8px; }
 
 /** 인사말 텍스트 **/
