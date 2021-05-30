@@ -58,6 +58,7 @@ footer p {text-align:center; padding-bottom:20px; margin-bottom:0; color:#ddd; f
 /*.app-line .app-icons #bowling { background-image: url(/images/icon_bowling.png); }*/
 .app-line .app-icons #bowling { background-image: url(/images/icon_bowling2.png); }
 .app-line .app-icons #soundcloud span{ font-size:13px; letter-spacing: -0.8px; }
+.app-line .app-icons #plex { background-image: url(/images/icon_plex.png); }
 
 /** 인사말 텍스트 **/
 .welcome { margin:40px 0 10px 0; } 
