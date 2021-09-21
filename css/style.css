@@ -32,7 +32,7 @@ footer p {text-align:center; padding-bottom:20px; margin-bottom:0; color:#ddd; f
 .profile .profile-cover {  position: absolute; height: 100%; width: 100%; z-index:9; }
 .profile .content{ position: absolute; top:75%; left:10%; width:230px; display:flex; }
 .profile .content span { font-size:24px; font-weight: 600; color: white; z-index: 3; text-align: center; text-shadow: 0 0 6px grey; }
-  
+
 /** 앱 목록 **/
 .app-line { display: none; margin-top: 15px; }
 .app-line .app-icons { display: inline-flex; margin-top: 10px; }
@@ -58,11 +58,13 @@ footer p {text-align:center; padding-bottom:20px; margin-bottom:0; color:#ddd; f
 /*.app-line .app-icons #bowling { background-image: url(/images/icon_bowling.png); }*/
 .app-line .app-icons #bowling { background-image: url(/images/icon_bowling2.png); }
 .app-line .app-icons #soundcloud span{ font-size:13px; letter-spacing: -0.8px; }
-.app-line .app-icons #plex { background-image: url(/images/icon_plex.png); }
+.app-line .app-icons #plex { background-image: url(/images/icon_plex2.png); background-color: #282828; }
+.app-line .app-icons #nugabox2 { background-image: url(/images/icon_nugabox2.png); }
+.app-line .app-icons #nugabox_util { background-image: url(/images/icon_nugabox2_white.png); background-color: #272b35; }
 
 /** 인사말 텍스트 **/
-.welcome { margin:40px 0 10px 0; } 
-.welcome p{ font-size:18px; color:#bbbbbb; cursor:default;} 
+.welcome { margin:40px 0 10px 0; }
+.welcome p{ font-size:18px; color:#bbbbbb; cursor:default;}
 .welcome #welcome-text { height:56px; }
 .welcome #welcome-text.font-han { font-size:22px; }
 .welcome .font-eng { font-family: 'Playfair Display', serif; }
