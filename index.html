@@ -22,9 +22,26 @@
   <link href="css/jquery-sakura.css" rel="stylesheet" type="text/css" crossorigin="anonymous">
 </head>
 <body>
-  <a class="sakura-toggle hover-ani">🌸</a>
+  <div class="row mt-2">
+    <div class="col-6"><a class="sakura-toggle hover-ani">🌸</a>
+      </div>
+    <div class="col-6">
+      <div id="dmtoggle">
+        <div class="arc"></div>
+        <div class="darc"></div>
+        <div class="ray one"></div>
+        <div class="ray two"></div>
+        <div class="ray three"></div>
+        <div class="ray four"></div>
+        <div class="ray five"></div>
+        <div class="ray six"></div>
+        <div class="ray seven"></div>
+        <div class="ray eight"></div>
+      </div>
+    </div>
+  </div>
   <div class="middle-box">
-    <p><img class="banner" src="images/banner_2021.png" alt="NUGABOX"></p>
+    <div class="banner_img"></div>
     <div class="profile hover-ani">
       <div class="content">
         <span>NUGA</span>
@@ -68,7 +85,7 @@
     </div>
     <footer>
       <!--<p>Copyright <script>document.write(new Date().getFullYear());</script> NUGABOX. All rights reserved.</p>-->
-      <a href="#"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fnugabox.github.io&count_bg=%23BAB8A6&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=Visit&edge_flat=false" alt="Visit"/></a>
+      <a href="#"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fnugabox.github.io&count_bg=%238E8E84&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=Visit&edge_flat=false" alt="Visit"/></a>
     </footer>
 
   </div>
@@ -76,11 +93,13 @@
   <script src="js/jquery.min.js" type="text/javascript" crossorigin="anonymous"></script>
   <script src="js/popper.min.js" type="text/javascript" crossorigin="anonymous"></script>
   <script src="js/bootstrap.min.js" type="text/javascript" crossorigin="anonymous"></script>
+  <script src="js/themetoggle.js" type="text/javascript" crossorigin="anonymous"></script>
   <script src="js/jquery-sakura.js" type="text/javascript" crossorigin="anonymous"></script>
   <script>
     document.oncontextmenu=function(){return false;} // 우클릭 방지
     document.onselectstart=function(){return false;} // 드래그 방지
     document.ondragstart=function(){return false;} // 선택 방지
+
     $(function() {
       // 벚꽃비
       $('body').sakura('start');
