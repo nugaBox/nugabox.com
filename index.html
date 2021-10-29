@@ -78,10 +78,17 @@
       <p>Hello World!<a class="insta-gradient" href="https://www.instagram.com/codenuga__" target="_blank"> by @codenuga__</a></p>
     </div>
     <div class="sns-link">
-      <a id="email" href="mailto:root@nugabox.com" target="_blank"data-bs-toggle="tooltip" data-bs-placement="bottom" title="Email"></a>
-      <a id="youtube" href="https://www.youtube.com/channel/UClyiG3nsS6r1Z36jUDUADDw" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" title="Youtube"></a>
-      <a id="instagram" href="https://www.instagram.com/codenuga__" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" title="Instagram"></a>
-      <a id="memory" href="https://campaign.naver.com/memory/" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" title="Memory"></a>
+      <a href="https://github.com/nugaBox" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" title="Github"><ion-icon name="logo-octocat"></ion-icon></a>
+      <a href="mailto:root@nugabox.com" target="_blank"data-bs-toggle="tooltip" data-bs-placement="bottom" title="Email"><ion-icon name="mail-outline"></ion-icon></a>
+      <a href="https://www.youtube.com/channel/UClyiG3nsS6r1Z36jUDUADDw" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" title="Youtube"><ion-icon name="logo-youtube"></ion-icon></a>
+      <a href="https://www.instagram.com/codenuga__" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" title="Instagram"><ion-icon name="logo-instagram"></ion-icon></a>
+      <a href="https://twitter.com/codenuga__" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" title="Twitter"><ion-icon name="logo-twitter"></ion-icon></a>
+      <a href="https://bugcrowd.com/NUGABOX" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" title="BugCrowd"><ion-icon name="bug-outline"></ion-icon></a>
+      <a href="https://campaign.naver.com/memory/" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" title="Memory"><ion-icon name="heart"></ion-icon></a>
+<!--      <a id="email" href="mailto:root@nugabox.com" target="_blank"data-bs-toggle="tooltip" data-bs-placement="bottom" title="Email"></a>-->
+<!--      <a id="youtube" href="https://www.youtube.com/channel/UClyiG3nsS6r1Z36jUDUADDw" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" title="Youtube"></a>-->
+<!--      <a id="instagram" href="https://www.instagram.com/codenuga__" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" title="Instagram"></a>-->
+<!--      <a id="memory" href="https://campaign.naver.com/memory/" target="_blank" data-bs-toggle="tooltip" data-bs-placement="top" title="Memory"></a>-->
     </div>
     <footer>
       <!--<p>Copyright <script>document.write(new Date().getFullYear());</script> NUGABOX. All rights reserved.</p>-->
@@ -95,6 +102,8 @@
   <script src="js/bootstrap.min.js" type="text/javascript" crossorigin="anonymous"></script>
   <script src="js/themetoggle.js" type="text/javascript" crossorigin="anonymous"></script>
   <script src="js/jquery-sakura.js" type="text/javascript" crossorigin="anonymous"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <script>
     document.oncontextmenu=function(){return false;} // 우클릭 방지
     document.onselectstart=function(){return false;} // 드래그 방지
@@ -117,6 +126,20 @@
       var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
         return new bootstrap.Tooltip(tooltipTriggerEl)
       })
+
+
+      // $('.sns-link a').hover(function() {
+      //   $(this).find('title').empty();
+      //   //
+      //   // ionicons.forEach(icon => {
+      //   //   icon.remove('title');
+      //     // let properTitle = icon.getAttribute('title');
+      //     // if (properTitle) {
+      //     //   icon.shadowRoot.querySelector('.icon-inner svg title').innerHTML = properTitle
+      //     // }
+      // })
+
+
       // 프로필 클릭 시
       $('.profile-cover').click(function(){
         $('.arrow-icon').toggleClass("open");

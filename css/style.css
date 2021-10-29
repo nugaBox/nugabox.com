@@ -7,11 +7,14 @@
 /** 테마 세팅 **/
 html {
     --bg-color: #fdfdfd;
+    --profile-bg: #F4F0EC;
     --text-color: #676a6c;
     --link-color: #000;
     --banner-url: url(/images/banner_2021.png);
     --app-box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.25), -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
     --welcome-bar-shadow: 0 0 5px #aaaaaa;
+    --sns-link: #c5c5c5;
+    --sns-link-hover: #717171;
     --webkit-filter-email: grayscale(100%) contrast(0.5) brightness(1.5);
     --webkit-filter-youtube: grayscale(100%) contrast(0.5) brightness(1.7);
     --webkit-filter-instagram: grayscale(100%) contrast(0.3) brightness(1.5);
@@ -19,11 +22,14 @@ html {
 }
 html.dark {
     --bg-color: #24282D;
+    --profile-bg: #1a1b1f;
     --text-color: #AFBAC6;
     --link-color: #bbb;
     --banner-url: url(/images/banner_2021_light.png);
     --app-box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.25), -8px -8px 12px 0 rgba(0, 0, 0, 0.3);
     --welcome-bar-shadow: 0 0 5px #464646;
+    --sns-link: #626367;
+    --sns-link-hover: #bbbbbb;
     --webkit-filter-email: grayscale(100%) contrast(0.7) brightness(0.7);
     --webkit-filter-youtube: grayscale(100%) contrast(0.5) brightness(0.9);
     --webkit-filter-instagram: grayscale(100%) contrast(0.3) brightness(0.7);
@@ -31,13 +37,14 @@ html.dark {
 }
 
 /** 폰트 **/
-@font-face { font-family: 'Pretendard'; font-weight: 45 920; font-style: normal; font-display: swap; src: local('Pretendard Variable'), url('../webfonts/PretendardVariable.woff2') format('woff2-variations')}
-@font-face {font-family: 'KoreanFrenchTypewriter'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2102-01@1.0/KoreanFrenchTypewriter.woff') format('woff'); font-weight: normal; font-style: normal}
+/*@font-face { font-family: 'Pretendard'; font-weight: 45 920; font-style: normal; font-display: swap; src: local('Pretendard Variable'), url('../webfonts/PretendardVariable.woff2') format('woff2-variations')}*/
+@import url(https://fonts.googleapis.com/earlyaccess/notosanskr.css);
 @import url(https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap);
+@font-face {font-family: 'KoreanFrenchTypewriter'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2102-01@1.0/KoreanFrenchTypewriter.woff') format('woff'); font-weight: normal; font-style: normal}
 
 /** 기본 요소 **/
-html,body { height:100%; width:100%; }
-body {background: var(--bg-color); color: var(--text-color); font-family:'Pretendard',sans-serif; font-size:15px; overflow-x:hidden;-ms-overflow-style:none; }
+html,body { height:100%; width:100%; background: var(--bg-color); }
+body {color: var(--text-color); font-family:'Noto Sans KR',sans-serif; font-size:15px; overflow-x:hidden;-ms-overflow-style:none; }
 body::-webkit-scrollbar { display:none; }
 h1 { margin:0; padding:0 }
 p { font-size:35px; color:#000000; font-weight:700; margin:0; padding:0; margin-bottom: 20px; }
@@ -72,7 +79,7 @@ a.sakura-toggle { position: absolute; background: none; border: none; font-size:
 /** 프로필 이미지 **/
 .middle-box { max-width:400px; z-index:100; margin:0 auto; padding-top:50px; text-align:center }
 .banner_img {width:180px; height:40px; background-image: var(--banner-url); background-size: cover; margin: 0 auto }
-.profile { position: relative; background-image: url(/images/profile/nuga_profile_2021_2.png); background-size: cover; width: 200px; height: 200px; border-radius: 25px; margin: auto; margin-top: 30px; margin-bottom: 30px; box-shadow: 0 3.4px 2.7px rgba(0, 0, 0, 0.037), 0 8.7px 6.9px rgba(0, 0, 0, 0.053), 0 17.7px 14.2px rgba(0, 0, 0, 0.067), 0 16.5px 9.2px rgba(0, 0, 0, 0.083), 0 40px 20px rgba(0, 0, 0, 0.12); }
+.profile { position: relative; background-color: var(--profile-bg); background-image: url(/images/profile/nuga_profile_2021_2_trans.png); background-size: cover; width: 200px; height: 200px; border-radius: 25px; margin: auto; margin-top: 30px; margin-bottom: 30px; box-shadow: 0 3.4px 2.7px rgba(0, 0, 0, 0.037), 0 8.7px 6.9px rgba(0, 0, 0, 0.053), 0 17.7px 14.2px rgba(0, 0, 0, 0.067), 0 16.5px 9.2px rgba(0, 0, 0, 0.083), 0 40px 20px rgba(0, 0, 0, 0.12); }
 .profile .profile-cover {  position: absolute; height: 100%; width: 100%; z-index:9; }
 .profile .content{ position: absolute; top:75%; left:10%; width:230px; display:flex; }
 .profile .content span { font-size:24px; font-weight: 600; color: white; z-index: 3; text-align: center; text-shadow: 0 0 6px grey; }
@@ -122,13 +129,16 @@ a.sakura-toggle { position: absolute; background: none; border: none; font-size:
 .welcome .arrow-icon .right-bar:after { content: ""; background-color: white; width: 20px; height: 5px; display: block; float: right; border-radius: 10px 6px 6px 10px; transition: all 0.5s cubic-bezier(0.25, 1.7, 0.35, 0.8); z-index: -1; box-shadow: var(--welcome-bar-shadow)}
 
 /** SNS 링크 **/
-.sns-link { display: inline-flex; margin:auto;}
-.sns-link a { display: block; margin: 8px 6px 0; color:#cccccc; background-size: contain; background-repeat: no-repeat; font-size:30px; z-index: 1;}
-.sns-link #email { -webkit-filter: var(--webkit-filter-email); background-image: url(/images/social/email.png); width: 30px; height: 30px;  }
-.sns-link #youtube { -webkit-filter: var(--webkit-filter-youtube); background-image: url(/images/social/youtube.png); width: 33px; height: 33px; }
-.sns-link #instagram { -webkit-filter: var(--webkit-filter-instagram); background-image: url(/images/social/instagram.png); width: 28px; height: 28px; margin-top:10px; }
-.sns-link #memory { -webkit-filter: var(--webkit-filter-memory); background-image: url(/images/social/yellow_ribbon.png); width: 30px; height: 30px;  margin-left: 10px; margin-right:0;}
-.sns-link #email:hover, #youtube:hover, #instagram:hover, #memory:hover{ -webkit-filter: grayscale(0%); filter: none;}
+.sns-link {display: inline-flex; margin:auto}
+.sns-link a {display: flex; justify-content: center; align-items: center; color: var(--sns-link); width: 35px; height: 35px; font-size: 23px; line-height: 35px; border-radius: 10px; background-color: transparent; }
+.sns-link a:hover {color: var(--sns-link-hover)}
+.sns-link a ion-icon {pointer-events: none}
+/*.sns-link a { display: block; margin: 8px 6px 0; color:#cccccc; background-size: contain; background-repeat: no-repeat; font-size:30px; z-index: 1;}*/
+/*.sns-link #email { -webkit-filter: var(--webkit-filter-email); background-image: url(/images/social/email.png); width: 30px; height: 30px;  }*/
+/*.sns-link #youtube { -webkit-filter: var(--webkit-filter-youtube); background-image: url(/images/social/youtube.png); width: 33px; height: 33px; }*/
+/*.sns-link #instagram { -webkit-filter: var(--webkit-filter-instagram); background-image: url(/images/social/instagram.png); width: 28px; height: 28px; margin-top:10px; }*/
+/*.sns-link #memory { -webkit-filter: var(--webkit-filter-memory); background-image: url(/images/social/yellow_ribbon.png); width: 30px; height: 30px;  margin-left: 10px; margin-right:0;}*/
+/*.sns-link #email:hover, #youtube:hover, #instagram:hover, #memory:hover{ -webkit-filter: grayscale(0%); filter: none;}*/
 /*.sns-link #email:hover{ background:linear-gradient(315deg, #2a2a72 0%, #009ffd 74%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }*/
 /*.sns-link #youtube:hover{ background:linear-gradient(147deg, #f71735 0%, #db3445 74%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }*/
 /*.sns-link #instagram:hover{ background:radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }*/
