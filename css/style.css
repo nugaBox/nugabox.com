@@ -115,8 +115,10 @@ a.sakura-toggle { position: absolute; background: none; border: none; font-size:
 .app-line .app-icons #devtools { background-image: url(/images/icons/icon_nugabox_tools_dev_light.png); background-color: #272b35; }
 .app-line .app-icons #devlog { background-image: url(/images/icons/icon_devlog.png); background-color: #272b35; }
 .app-line .app-icons #kakao { background-image: url(/images/icons/icon_kakao.png) }
+.app-line .app-icons #kakaotalk { background-image: url(/images/icons/icon_kakao_talk.png) }
 .app-line .app-icons #think { background-image: url(/images/icons/icon_think.png); background-color: #FDF8FE; }
 .app-line .app-icons #mark { background-image: url(/images/icons/icon_mark.png) }
+.app-line .app-icons #note { background-image: url(/images/icons/icon_nuganote_dark.png); background-color: #272b35; }
 
 /** 인사말 텍스트 **/
 .welcome { margin:40px 0 10px 0; }
