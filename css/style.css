@@ -124,6 +124,7 @@ a.sakura-toggle { position: absolute; background: none; border: none; font-size:
 .app-line .app-icons #set { background-image: url(/images/icons/icon_set.png); background-color: #272b35; }
 .app-line .app-icons #developer { background-image: url(/images/icons/icon_developer.png)}
 .app-line .app-icons #love { background-image: url(/images/icons/icon_love.png)}
+.app-line .app-icons #ha { background-image: url(/images/icons/icon_ha.png)}
 
 /** 인사말 텍스트 **/
 .welcome { margin:40px 0 10px 0; }
