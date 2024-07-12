@@ -120,6 +120,10 @@ a.sakura-toggle { position: absolute; background: none; border: none; font-size:
 .app-line .app-icons #mark { background-image: url(/images/icons/icon_mark.png) }
 .app-line .app-icons #note { background-image: url(/images/icons/icon_nuganote_dark.png); background-color: #272b35; }
 .app-line .app-icons #naver { background-image: url(/images/icons/icon_naver.png) }
+.app-line .app-icons #clock { background-image: url(/images/icons/icon_clock.png); background-color: #272b35; }
+.app-line .app-icons #set { background-image: url(/images/icons/icon_set.png); background-color: #272b35; }
+.app-line .app-icons #developer { background-image: url(/images/icons/icon_developer.png)}
+.app-line .app-icons #love { background-image: url(/images/icons/icon_love.png)}
 
 /** 인사말 텍스트 **/
 .welcome { margin:40px 0 10px 0; }
