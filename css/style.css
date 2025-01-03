@@ -125,6 +125,8 @@ a.sakura-toggle { position: absolute; background: none; border: none; font-size:
 .app-line .app-icons #developer { background-image: url(/images/icons/icon_developer.png)}
 .app-line .app-icons #love { background-image: url(/images/icons/icon_love.png)}
 .app-line .app-icons #ha { background-image: url(/images/icons/icon_ha.png)}
+.app-line .app-icons #tesla { background-image: url(/images/icons/icon_tesla.png); background-color: #e31937; }
+.app-line .app-icons #cmdcenter { background-image: url(/images/icons/icon_cmdcenter.png);}
 
 /** 인사말 텍스트 **/
 .welcome { margin:40px 0 10px 0; }
