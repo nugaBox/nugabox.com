@@ -19,24 +19,24 @@
   <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css" crossorigin="anonymous">
   <link href="/css/fontAwesome.min.css" rel="stylesheet" type="text/css" crossorigin="anonymous">
   <link href="/css/style.css" rel="stylesheet" type="text/css" crossorigin="anonymous">
-  <link href="/css/jquery-sakura.css" rel="stylesheet" type="text/css" crossorigin="anonymous">
+  <!-- <link href="/css/jquery-sakura.css" rel="stylesheet" type="text/css" crossorigin="anonymous"> -->
+  <link href="/css/sakura.min.css" rel="stylesheet" type="text/css" crossorigin="anonymous">
 </head>
 <body>
   <div class="row mt-2">
     <div class="col-6"><a class="sakura-toggle hover-ani">🌸</a>
       </div>
     <div class="col-6 text-right">
-      <div id="dmtoggle">
-        <div class="arc"></div>
-        <div class="darc"></div>
-        <div class="ray one"></div>
-        <div class="ray two"></div>
-        <div class="ray three"></div>
-        <div class="ray four"></div>
-        <div class="ray five"></div>
-        <div class="ray six"></div>
-        <div class="ray seven"></div>
-        <div class="ray eight"></div>
+      <div class="theme-toggle-wrapper">
+        <div class="theme-toggle">
+          <button class="theme-toggle-btn" data-theme="light">
+            <ion-icon name="sunny-outline"></ion-icon>
+          </button>
+          <button class="theme-toggle-btn" data-theme="dark">
+            <ion-icon name="moon-outline"></ion-icon>
+          </button>
+          <span class="theme-toggle-slider"></span>
+        </div>
       </div>
     </div>
   </div>
@@ -106,71 +106,9 @@
   <script src="/js/jquery.min.js" type="text/javascript" crossorigin="anonymous"></script>
   <script src="/js/popper.min.js" type="text/javascript" crossorigin="anonymous"></script>
   <script src="/js/bootstrap.min.js" type="text/javascript" crossorigin="anonymous"></script>
-  <script src="/js/themetoggle.js" type="text/javascript" crossorigin="anonymous"></script>
-  <script src="/js/jquery-sakura.js" type="text/javascript" crossorigin="anonymous"></script>
+  <script src="/js/sakura.min.js" type="text/javascript" crossorigin="anonymous"></script>
+  <script src="/js/script.js" type="text/javascript" crossorigin="anonymous"></script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  <script>
-    document.oncontextmenu=function(){return false;} // 우클릭 방지
-    document.onselectstart=function(){return false;} // 드래그 방지
-    document.ondragstart=function(){return false;} // 선택 방지
-
-    $(function() {
-      // 벚꽃비
-      $('body').sakura('start');
-      $('.sakura-toggle').click(function(){
-        if ($(this).val() === 'on'){
-          $('body').sakura('stop');
-          $(this).val('off');
-        } else {
-          $('body').sakura('start');
-          $(this).val('on');
-        }
-      });
-      // 부트스트랩 툴팁
-      var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-      var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-        return new bootstrap.Tooltip(tooltipTriggerEl)
-      })
-
-
-      // $('.sns-link a').hover(function() {
-      //   $(this).find('title').empty();
-      //   //
-      //   // ionicons.forEach(icon => {
-      //   //   icon.remove('title');
-      //     // let properTitle = icon.getAttribute('title');
-      //     // if (properTitle) {
-      //     //   icon.shadowRoot.querySelector('.icon-inner svg title').innerHTML = properTitle
-      //     // }
-      // })
-
-
-      // 프로필 클릭 시
-      $('.profile-cover').click(function(){
-        $('.arrow-icon').toggleClass("open");
-        $('.app-line').slideToggle();
-      });
-      $('.arrow-icon').click(function(){
-        $('.arrow-icon').toggleClass("open");
-        $('.app-line').slideToggle();
-      });
-      // 문구 한영 전환
-      var welcome = $('#welcome-text');
-      changeKorEng = setInterval(function() {
-        if(welcome.hasClass('font-eng')){
-          welcome.animate({opacity:0},3000);
-          welcome.removeClass('font-eng');
-          welcome.addClass('font-han');
-          welcome.css('opacity','0').stop().html('"네가 원하는 양은 이 상자 안에 있어."').animate({opacity:1},2000);
-        } else {
-          welcome.animate({opacity:0},3000);
-          welcome.removeClass('font-han');
-          welcome.addClass('font-eng');
-          welcome.css('opacity','0').stop().html('"This is only his box.<br>The sheep you asked for is inside."').animate({opacity:1},2000);
-        }
-      }, 7000);
-    });
-  </script>
 </body>
 </html>
