@@ -44,17 +44,55 @@ html.dark {
 
 /** 기본 요소 **/
 html,body { height:100%; width:100%; background: var(--bg-color); }
-body {color: var(--text-color); font-family:'Pretendard',sans-serif; font-size:15px; overflow-x:hidden;-ms-overflow-style:none; }
+body {
+  color: var(--text-color); 
+  font-family:'Pretendard',sans-serif; 
+  font-size:15px; 
+  overflow-x: hidden;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  position: relative;
+}
 body::-webkit-scrollbar { display:none; }
 h1 { margin:0; padding:0 }
 p { font-size:35px; color:#000000; font-weight:700; margin:0; padding:0; margin-bottom: 20px; }
-footer {margin:10px 0;}
+footer {margin:10px 0 200px;}
 footer p {text-align:center; padding-bottom:20px; margin-bottom:0; color:#ddd; font-size: 0.9em; letter-spacing: -0.3px;font-weight: 400;}
+
+/* body의 after 가상요소 제거하고 대신 gradient-overlay 클래스 추가 */
+.gradient-overlay {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(253, 253, 253, 0) 0%,
+    rgba(253, 253, 253, 0.3) 30%,
+    rgba(253, 253, 253, 0.8) 45%,
+    var(--bg-color) 50%,
+    var(--bg-color) 100%
+  );
+  pointer-events: none;
+  z-index: 150;
+}
+
+html.dark .gradient-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(36, 40, 45, 0) 0%,
+    rgba(36, 40, 45, 0.3) 30%,
+    rgba(36, 40, 45, 0.8) 45%,
+    var(--bg-color) 50%,
+    var(--bg-color) 100%
+  );
+}
 
 /** 테마 토글 버튼 **/
 .theme-toggle-wrapper {
   position: absolute;
-  right: 32px;
+  right: 0px;
   opacity: 0.8;
   transition: opacity 0.3s;
 }
@@ -110,10 +148,26 @@ footer p {text-align:center; padding-bottom:20px; margin-bottom:0; color:#ddd; f
 }
 
 /** 프로필 이미지 **/
-.middle-box { max-width:400px; z-index:100; margin:0 auto; padding-top:50px; text-align:center }
+.middle-box { 
+  max-width: 400px; 
+  z-index: 1; 
+  margin: 0 auto; 
+  padding-top: 70px; 
+  text-align: center;
+  position: relative;
+  pointer-events: none;
+  min-height: 100vh;
+  background: var(--bg-color);
+  overflow: hidden;
+}
+
+.middle-box * {
+  pointer-events: auto;
+}
+
 .banner_img {width:180px; height:40px; background-image: var(--banner-url); background-size: cover; margin: 0 auto }
 .profile { position: relative; background-color: var(--profile-bg); background-image: url(/images/profile/nuga_memoji_2024_trans.png); background-size: cover; width: 200px; height: 200px; border-radius: 25px; margin: auto; margin-top: 30px; margin-bottom: 30px; box-shadow: 0 3.4px 2.7px rgba(0, 0, 0, 0.037), 0 8.7px 6.9px rgba(0, 0, 0, 0.053), 0 17.7px 14.2px rgba(0, 0, 0, 0.067), 0 16.5px 9.2px rgba(0, 0, 0, 0.083), 0 40px 20px rgba(0, 0, 0, 0.12); }
-.profile .profile-cover {  position: absolute; height: 100%; width: 100%; z-index:9; }
+.profile .profile-cover {  position: absolute; height: 100%; width: 100%; z-index:999; }
 .profile .content{ position: absolute; top:75%; left:10%; width:230px; display:flex; }
 .profile .content span { font-size:24px; font-weight: 600; color: white; z-index: 3; text-align: center; text-shadow: 0 0 6px grey; }
 
@@ -199,7 +253,7 @@ footer p {text-align:center; padding-bottom:20px; margin-bottom:0; color:#ddd; f
 .open .right-bar:after { transform-origin: center center; transform: rotate(70deg); }
 
 /* 기존 sakura-toggle 스타일 수정 */
-a.sakura-toggle { 
+.icon-toggle-btn a { 
   position: absolute; 
   background: none; 
   border: none; 
@@ -211,9 +265,43 @@ a.sakura-toggle {
 }
 
 @media (min-width:768px) {
-  a.sakura-toggle {
+.icon-toggle-btn a {
     font-size: 30px;
   }
 }
 
+.snow {
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 3px 3px #fff;
+  height: .3vw;
+  position: absolute;
+  width: .5vw;
+}
 
+/* sakura 요소 관련 스타일 추가 */
+.sakura-container {
+  pointer-events: none !important;
+  position: fixed !important;
+  z-index: 10;
+}
+
+.sakura {
+  pointer-events: none !important;
+  z-index: 10;
+}
+
+/* top-bar 스타일 추가 */
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 0px;
+  z-index: 200;
+  pointer-events: none;  /* 기본적으로 이벤트 무시 */
+}
+
+.top-bar * {
+  pointer-events: auto;  /* 자식 요소들은 이벤트 허용 */
+}
