@@ -1,4 +1,155 @@
+// 우클릭, 드래그, 선택 방지
+document.oncontextmenu = function() { return false; }
+document.onselectstart = function() { return false; }
+document.ondragstart = function() { return false; }
+
 document.addEventListener('DOMContentLoaded', () => {
+  // 월별 효과 설정
+  const seasonalEffects = {
+    1: 'snow',
+    2: 'sakura',
+    3: 'sakura',
+    4: 'sakura',
+    5: 'sakura',
+    6: 'leaf',
+    7: 'leaf',
+    8: 'leaf',
+    9: 'fallen',
+    10: 'fallen',
+    11: 'fallen',
+    12: 'snow'
+  };
+
+  // 현재 월 가져오기
+  const currentMonth = new Date().getMonth() + 1;
+  const currentEffect = seasonalEffects[currentMonth];
+
+  // 모든 효과 토글 버튼 숨기기
+  const allToggles = document.querySelectorAll('.sakura-toggle, .snow-toggle, .leaf-toggle, .fallen-toggle');
+  allToggles.forEach(toggle => toggle.style.display = 'none');
+
+  // 현재 월에 해당하는 토글 버튼만 표시
+  const currentToggle = document.querySelector(`.${currentEffect}-toggle`);
+  if (currentToggle) {
+    currentToggle.style.display = 'block';
+  }
+
+  // 효과 인스턴스 저장
+  let currentInstance = null;
+  let isEffectOn = false;
+
+  // 효과 초기화 함수들
+  const effectInitializers = {
+    sakura: function() {
+      currentInstance = new Sakura('body', {
+        colors: [
+          {
+            gradientColorStart: 'rgba(255, 183, 197, 0.9)',
+            gradientColorEnd: 'rgba(255, 197, 208, 0.9)',
+            gradientColorDegree: 120,
+          }
+        ],
+        delay: 200,
+        maxSize: 14,
+        minSize: 10,
+        fallSpeed: 1
+      });
+
+      // 주기적으로 화면 하단의 벚꽃 요소들을 제거
+      const cleanupInterval = setInterval(() => {
+        const sakuraElements = document.querySelectorAll('.sakura');
+        sakuraElements.forEach(el => {
+          const rect = el.getBoundingClientRect();
+          const windowHeight = window.innerHeight;
+          if (rect.top > windowHeight * 0.9) {  // 80%로 변경
+            // fadeout 애니메이션 추가
+            el.style.transition = 'opacity 1s ease-out';
+            el.style.opacity = '0';
+            // 애니메이션 완료 후 요소 제거
+            setTimeout(() => {
+              el.remove();
+            }, 1000);
+          }
+        });
+      }, 100);  // 더 자주 체크하도록 간격 줄임
+
+      // cleanup 인터벌 저장
+      currentInstance.cleanupInterval = cleanupInterval;
+    },
+    snow: function() {
+      // snow.js 스크립트 실행
+      if (!document.getElementById('embedim--snow')) {
+        var embedimSnow = document.createElement('script');
+        embedimSnow.src = '/js/snow.js';
+        document.body.appendChild(embedimSnow);
+      }
+    },
+    leaf: function() {
+      // 나뭇잎 효과 구현 예정
+      console.log('Leaf effect not implemented yet');
+    },
+    fallen: function() {
+      // 낙엽 효과 구현 예정
+      console.log('Fallen leaves effect not implemented yet');
+    }
+  };
+
+  // 효과 제거 함수들
+  const effectRemovers = {
+    sakura: function() {
+      if (currentInstance) {
+        // cleanup 인터벌 정지
+        if (currentInstance.cleanupInterval) {
+          clearInterval(currentInstance.cleanupInterval);
+        }
+        currentInstance.stop(true);
+        const elements = document.querySelectorAll('.sakura');
+        elements.forEach(el => {
+          el.style.transition = 'opacity 1s';
+          el.style.opacity = '0';
+        });
+        setTimeout(() => {
+          elements.forEach(el => el.remove());
+          currentInstance = null;
+        }, 1000);
+      }
+    },
+    snow: function() {
+      const snowContainer = document.getElementById('embedim--snow');
+      if (snowContainer) {
+        snowContainer.remove();
+      }
+    },
+    leaf: function() {
+      console.log('Leaf effect removal not implemented yet');
+    },
+    fallen: function() {
+      console.log('Fallen leaves effect removal not implemented yet');
+    }
+  };
+
+  // 토글 버튼 클릭 이벤트
+  if (currentToggle) {
+    currentToggle.addEventListener('click', () => {
+      if (isEffectOn) {
+        // 효과 끄기
+        effectRemovers[currentEffect]();
+        currentToggle.style.opacity = '0.5';
+        isEffectOn = false;
+      } else {
+        // 효과 켜기
+        effectInitializers[currentEffect]();
+        currentToggle.style.opacity = '1';
+        isEffectOn = true;
+      }
+    });
+
+    // 초기 효과 시작
+    effectInitializers[currentEffect]();
+    currentToggle.style.opacity = '1';
+    isEffectOn = true;
+  }
+
   const themeToggleBtns = document.querySelectorAll('.theme-toggle-btn');
   const slider = document.querySelector('.theme-toggle-slider');
   
@@ -28,11 +179,15 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('theme', theme);
   }
   
-  // 초기 테마 설정 - light를 기본값으로
+  console.log('savedTheme', savedTheme);
+  console.log('currentEffect', currentEffect);
+  // 초기 테마 설정
   if (savedTheme) {
     setTheme(savedTheme);
   } else {
-    setTheme('light');
+    // 현재 월의 효과가 snow이면 dark 테마, 아니면 light 테마를 기본값으로
+    const defaultTheme = currentEffect === 'snow' ? 'dark' : 'light';
+    setTheme(defaultTheme);
   }
   
   // 버튼 클릭 이벤트
@@ -42,67 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
       setTheme(theme);
     });
   });
-  
-  // 벚꽃 토글 초기화 및 토글 기능 수정
-  let sakuraInstance = null;
-  const sakuraBtn = document.querySelector('.sakura-toggle');
-  let isSakuraOn = true;  // 초기 상태는 켜짐으로 설정
 
-  // Sakura 초기화 함수
-  function initSakura() {
-    sakuraInstance = new Sakura('body', {
-      colors: [
-        {
-          gradientColorStart: 'rgba(255, 183, 197, 0.9)',
-          gradientColorEnd: 'rgba(255, 197, 208, 0.9)',
-          gradientColorDegree: 120,
-        }
-      ],
-      delay: 200,
-      maxSize: 14,
-      minSize: 10,
-      fallSpeed: 1,
-    });
-  }
-
-  // 초기 상태 설정 (켜짐)
-  initSakura();
-  sakuraBtn.style.opacity = '1';
-
-  // 토글 버튼 클릭 이벤트
-  sakuraBtn.addEventListener('click', () => {
-    if (isSakuraOn) {
-      if (sakuraInstance) {
-        // graceful stop으로 변경
-        sakuraInstance.stop(true);
-        // 벚꽃 요소들 페이드 아웃 후 제거
-        const sakuraElements = document.querySelectorAll('.sakura');
-        sakuraElements.forEach(el => {
-          el.style.transition = 'opacity 2s';
-          el.style.opacity = '0';
-        });
-        
-        // 페이드 아웃 완료 후 요소 제거
-        setTimeout(() => {
-          sakuraElements.forEach(el => el.remove());
-          sakuraInstance = null;
-        }, 2000);  // 1초 후 제거
-      }
-      sakuraBtn.style.opacity = '0.5';
-      isSakuraOn = false;
-    } else {
-      initSakura();
-      sakuraBtn.style.opacity = '1';
-      isSakuraOn = true;
-    }
-  });
-
-  // 우클릭, 드래그, 선택 방지
-  document.oncontextmenu = function() { return false; }
-  document.onselectstart = function() { return false; }
-  document.ondragstart = function() { return false; }
-
-  // jQuery 관련 기능들
   $(function() {
     // 부트스트랩 툴팁
     var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
