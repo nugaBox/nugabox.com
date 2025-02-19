@@ -180,6 +180,7 @@ html.dark .gradient-overlay {
 .app-line .app-icons .icon-none { background: none; box-shadow: none; }
 .app-line .app-icons #cloud { background-image: url(/images/icons/icon_cloud_circle.png); }
 .app-line .app-icons #wiki{ background-image: url(/images/icons/icon_wiki.png); }
+.app-line .app-icons #wiki_white{ background-image: url(/images/icons/icon_wiki_white.png); background-color: #272b35; }
 .app-line .app-icons #nugabox2020 { background-image: url(/images/icons/icon_nugabox_2020.png); }
 .app-line .app-icons #portfolio { background-image: url(/images/icons/icon_portfolio.png); }
 .app-line .app-icons #github { background-image: url(/images/icons/icon_github.png); }
@@ -214,6 +215,10 @@ html.dark .gradient-overlay {
 .app-line .app-icons #ha { background-image: url(/images/icons/icon_ha.png)}
 .app-line .app-icons #tesla { background-image: url(/images/icons/icon_tesla.png); background-color: #e31937; }
 .app-line .app-icons #cmdcenter { background-image: url(/images/icons/icon_cmdcenter.png);}
+.app-line .app-icons #gitlab { background-image: url(/images/icons/icon_gitlab.png);}
+.app-line .app-icons #gitlab_black { background-image: url(/images/icons/icon_gitlab_black.png);}
+.app-line .app-icons #cyworld { background-image: url(/images/icons/icon_cyworld.png);}
+
 
 /** 인사말 텍스트 **/
 .welcome { margin:40px 0 10px 0; }
